@@ -8,6 +8,8 @@
 
 import Cocoa
 import Foundation
+import Appkit
+
 
 class ViewController: NSViewController {
     var letters: [Letter] = [
@@ -39,21 +41,17 @@ class ViewController: NSViewController {
         Letter(letter: "Z", row: Row.Bot, side: Side.Left),
         Letter(letter: "Æ", row: Row.Mid, side: Side.Right),
         Letter(letter: "Ø", row: Row.Mid, side: Side.Right),
-        Letter(letter: "Å", row: Row.Top, side: Side.Right)
-    ]
+        Letter(letter: "Å", row: Row.Top, side: Side.Right)]
     var currentLetter: Letter?
-    
-    @IBOutlet weak var CurrentLetter: NSTextFieldCell!
-    
+
+    @IBOutlet weak var CurrentLetterTextField: NSTextField!
     @IBAction func ChangeLetter(sender: AnyObject) {
         self.currentLetter = self.letters[Int(arc4random_uniform(28))]
-        CurrentLetter.stringValue = String(self.currentLetter!.letter)
+        CurrentLetterTextField.stringValue = String(self.currentLetter!.letter)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //CurrentLetter.stringValue = String(letters[random() % 10].letter)
     }
 
     override var representedObject: AnyObject? {

@@ -13,6 +13,7 @@
 		0931EED31ABEA36F00AF07AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0931EED11ABEA36F00AF07AF /* Main.storyboard */; };
 		0931EEDF1ABEA36F00AF07AF /* XTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931EEDE1ABEA36F00AF07AF /* XTypeTests.swift */; };
 		0931EEEC1ABEA71E00AF07AF /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931EEEB1ABEA71E00AF07AF /* Letter.swift */; };
+		097DE0551ABF492400E5AB2C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097DE0541ABF492400E5AB2C /* View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		0931EEDD1ABEA36F00AF07AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0931EEDE1ABEA36F00AF07AF /* XTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTypeTests.swift; sourceTree = "<group>"; };
 		0931EEEB1ABEA71E00AF07AF /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
+		097DE0541ABF492400E5AB2C /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				0931EECF1ABEA36F00AF07AF /* Images.xcassets */,
 				0931EED11ABEA36F00AF07AF /* Main.storyboard */,
 				0931EEC91ABEA36F00AF07AF /* Supporting Files */,
+				097DE0541ABF492400E5AB2C /* View.swift */,
 			);
 			path = XType;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097DE0551ABF492400E5AB2C /* View.swift in Sources */,
 				0931EECE1ABEA36F00AF07AF /* ViewController.swift in Sources */,
 				0931EECC1ABEA36F00AF07AF /* AppDelegate.swift in Sources */,
 				0931EEEC1ABEA71E00AF07AF /* Letter.swift in Sources */,
@@ -409,6 +413,7 @@
 				0931EEE41ABEA36F00AF07AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0931EEE51ABEA36F00AF07AF /* Build configuration list for PBXNativeTarget "XTypeTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				0931EEE71ABEA36F00AF07AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
