@@ -10,53 +10,46 @@ import Cocoa
 import Foundation
 import Appkit
 
+protocol HandleKeyDownDelegate{
+    func keyDown(theEvent: NSEvent);
+}
 
-class ViewController: NSViewController {
-    var letters: [Letter] = [
-        Letter(letter: "A", row: Row.Mid, side: Side.Left),
-        Letter(letter: "B", row: Row.Bot, side: Side.Left),
-        Letter(letter: "C", row: Row.Bot, side: Side.Left),
-        Letter(letter: "D", row: Row.Mid, side: Side.Left),
-        Letter(letter: "E", row: Row.Top, side: Side.Left),
-        Letter(letter: "F", row: Row.Mid, side: Side.Left),
-        Letter(letter: "G", row: Row.Mid, side: Side.Left),
-        Letter(letter: "H", row: Row.Mid, side: Side.Right),
-        Letter(letter: "I", row: Row.Top, side: Side.Right),
-        Letter(letter: "J", row: Row.Mid, side: Side.Right),
-        Letter(letter: "K", row: Row.Mid, side: Side.Right),
-        Letter(letter: "L", row: Row.Mid, side: Side.Right),
-        Letter(letter: "M", row: Row.Bot, side: Side.Right),
-        Letter(letter: "N", row: Row.Bot, side: Side.Right),
-        Letter(letter: "O", row: Row.Top, side: Side.Right),
-        Letter(letter: "P", row: Row.Top, side: Side.Right),
-        Letter(letter: "Q", row: Row.Top, side: Side.Left),
-        Letter(letter: "R", row: Row.Top, side: Side.Left),
-        Letter(letter: "S", row: Row.Mid, side: Side.Left),
-        Letter(letter: "T", row: Row.Top, side: Side.Left),
-        Letter(letter: "U", row: Row.Top, side: Side.Right),
-        Letter(letter: "V", row: Row.Bot, side: Side.Left),
-        Letter(letter: "W", row: Row.Top, side: Side.Left),
-        Letter(letter: "X", row: Row.Bot, side: Side.Left),
-        Letter(letter: "Y", row: Row.Top, side: Side.Right),
-        Letter(letter: "Z", row: Row.Bot, side: Side.Left),
-        Letter(letter: "Æ", row: Row.Mid, side: Side.Right),
-        Letter(letter: "Ø", row: Row.Mid, side: Side.Right),
-        Letter(letter: "Å", row: Row.Top, side: Side.Right)]
+class ViewController: NSViewController, HandleKeyDownDelegate{
+
     var currentLetter: Letter?
 
     @IBOutlet weak var CurrentLetterTextField: NSTextField!
     @IBAction func ChangeLetter(sender: AnyObject) {
-        self.currentLetter = self.letters[Int(arc4random_uniform(28))]
-        CurrentLetterTextField.stringValue = String(self.currentLetter!.letter)
+        self.UpdateLetter()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        View().delegate = self
+        
+        UpdateLetter()
     }
 
     override var representedObject: AnyObject? {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+    
+    override func keyDown(theEvent: NSEvent) {
+        if (theEvent.characters! == String(currentLetter!.letter)){
+            println("Correct")
+            view.layer?.backgroundColor = NSColor.greenColor().CGColor
+            UpdateLetter();
+        } else {
+            println("wrong")
+            view.layer?.backgroundColor = NSColor.redColor().CGColor
+
+        }
+    }
+    
+    func UpdateLetter(){
+        currentLetter = Letter.GenerateLetter(false, row: nil, side: nil);
+        CurrentLetterTextField.stringValue = String(self.currentLetter!.letter)
     }
 }

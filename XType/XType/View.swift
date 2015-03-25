@@ -10,13 +10,15 @@ import Cocoa
 
 class View: NSView {
     
+    
+    
+    var delegate: HandleKeyDownDelegate?
+    
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
 
         // Drawing code here.
-    }
-    override func keyDown(theEvent: NSEvent){
-        println(theEvent.characters)
+        self.wantsLayer = true
     }
     
     override var acceptsFirstResponder: Bool {
