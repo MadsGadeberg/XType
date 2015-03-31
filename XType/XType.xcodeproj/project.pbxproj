@@ -13,6 +13,7 @@
 		0931EED31ABEA36F00AF07AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0931EED11ABEA36F00AF07AF /* Main.storyboard */; };
 		0931EEDF1ABEA36F00AF07AF /* XTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931EEDE1ABEA36F00AF07AF /* XTypeTests.swift */; };
 		0931EEEC1ABEA71E00AF07AF /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0931EEEB1ABEA71E00AF07AF /* Letter.swift */; };
+		096B0BDE1AC9ADE000628EED /* LetterContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096B0BDD1AC9ADE000628EED /* LetterContainer.swift */; };
 		097DE0551ABF492400E5AB2C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097DE0541ABF492400E5AB2C /* View.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		0931EEDD1ABEA36F00AF07AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0931EEDE1ABEA36F00AF07AF /* XTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTypeTests.swift; sourceTree = "<group>"; };
 		0931EEEB1ABEA71E00AF07AF /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
+		096B0BDD1AC9ADE000628EED /* LetterContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterContainer.swift; sourceTree = "<group>"; };
 		097DE0541ABF492400E5AB2C /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				0931EEEB1ABEA71E00AF07AF /* Letter.swift */,
+				096B0BDD1AC9ADE000628EED /* LetterContainer.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			files = (
 				097DE0551ABF492400E5AB2C /* View.swift in Sources */,
 				0931EECE1ABEA36F00AF07AF /* ViewController.swift in Sources */,
+				096B0BDE1AC9ADE000628EED /* LetterContainer.swift in Sources */,
 				0931EECC1ABEA36F00AF07AF /* AppDelegate.swift in Sources */,
 				0931EEEC1ABEA71E00AF07AF /* Letter.swift in Sources */,
 			);

@@ -15,19 +15,24 @@ protocol HandleKeyDownDelegate{
 }
 
 class ViewController: NSViewController, HandleKeyDownDelegate{
-
-    var currentLetter: Letter?
+    
+    var letterContainer: LetterContainer = LetterContainer()
 
     @IBOutlet weak var CurrentLetterTextField: NSTextField!
-    @IBAction func ChangeLetter(sender: AnyObject) {
-        self.UpdateLetter()
+    @IBOutlet weak var UpcommingLettersTextField: NSTextField!
+    
+    required init?(coder: NSCoder) {
+
+        super.init(coder: coder)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Delegate for keydown event
         View().delegate = self
         
-        UpdateLetter()
+        CurrentLetterTextField.stringValue = String(letterContainer.letters[0].letter)
+        UpcommingLettersTextField.stringValue = letterContainer.getUpcommingLettersString()
     }
 
     override var representedObject: AnyObject? {
@@ -37,19 +42,19 @@ class ViewController: NSViewController, HandleKeyDownDelegate{
     }
     
     override func keyDown(theEvent: NSEvent) {
-        if (theEvent.characters! == String(currentLetter!.letter)){
-            println("Correct")
+        if (theEvent.characters! == String(letterContainer.letters[0].letter)){
+            // Correct carracter
             view.layer?.backgroundColor = NSColor.greenColor().CGColor
-            UpdateLetter();
+            UpdateLetters();
         } else {
-            println("wrong")
+            // Wrong carracter
             view.layer?.backgroundColor = NSColor.redColor().CGColor
-
         }
     }
     
-    func UpdateLetter(){
-        currentLetter = Letter.GenerateLetter(false, row: nil, side: nil);
-        CurrentLetterTextField.stringValue = String(self.currentLetter!.letter)
+    func UpdateLetters(){
+        letterContainer.GenerateLetter()
+        UpcommingLettersTextField.stringValue = letterContainer.getUpcommingLettersString()
+        CurrentLetterTextField.stringValue = String(letterContainer.letters[0].letter)
     }
 }
